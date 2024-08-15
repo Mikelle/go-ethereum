@@ -141,7 +141,7 @@ func (miner *Miner) getPending() *newPayloadResult {
 	}
 
 	var (
-		timestamp  = uint64(time.Now().Unix())
+		timestamp  = uint64(time.Now().UnixMilli())
 		withdrawal types.Withdrawals
 	)
 	if miner.chainConfig.IsShanghai(new(big.Int).Add(header.Number, big.NewInt(1)), timestamp) {
